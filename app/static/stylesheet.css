@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.container {
+    text-align: justify;
+  }
+
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
+.banner {
+    font-family: 'Press Start 2P', cursive;
+    color: #c596c3;
+    text-shadow: 2px 2px #f5c5f3;
+}
+
+.navbar-brand {
+    font-family: 'Press Start 2P', cursive;
+    color: #c596c3;
+    text-shadow: 2px 2px #f5c5f3;
+}
+
+.btn-outline-secondary {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color: grey;
+    
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
