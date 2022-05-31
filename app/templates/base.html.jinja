@@ -46,24 +46,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" href="{{url_for('index')}}">Strona główna</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Opinions</a>
+                                <a class="nav-link" href="{{url_for('extract', product_id=39562616)}}">Pobierz produkt</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Statistics
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">2022</a></li>
-                                    <li><a class="dropdown-item" href="#">2021</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">2020</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Lista produktów</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('author')}}">Autor</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
@@ -80,8 +72,9 @@
     <div class="container">
         <div class="row row-cols-4">
             <div class="col-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ratione in cum at nisi eius iste quam quia quisquam. Eum a numquam ab voluptatibus recusandae magnam, consectetur pariatur consequuntur dolore inventore quisquam dolores sed libero tenetur rem id ipsa? Dolores accusamus dolore asperiores? Facere expedita esse minima ducimus cumque iusto quo omnis quibusdam soluta aut sed veritatis officiis cum, voluptatum molestias praesentium voluptatem dignissimos. Magni sint mollitia quia cum placeat sunt numquam odit veniam obcaecati quibusdam. Nam modi nemo optio. Sapiente consectetur deserunt in mollitia eos saepe quidem ipsam excepturi dignissimos iusto velit vel placeat expedita sit voluptates dolorum eligendi, molestias recusandae doloribus et quibusdam commodi animi beatae? Assumenda in accusamus architecto veritatis nam aliquid amet molestias reprehenderit quae dolore eveniet maiores nostrum suscipit perferendis quisquam magni harum rem delectus, neque unde iste dolor. Error reprehenderit ex, dicta, voluptatibus reiciendis nam delectus quod tempora officia id explicabo, libero dolorum illo excepturi veniam a doloremque iure? Quia optio veniam sequi quidem molestias, odio cupiditate natus quae reiciendis modi molestiae magnam aut similique eos, quam mollitia perferendis, vitae sit repudiandae obcaecati officia assumenda totam illum? Velit molestiae facilis soluta fuga temporibus quam amet corrupti cumque quos, accusamus minus, magnam laboriosam, vel reprehenderit odit ad. Iusto illum deserunt mollitia officiis. Ipsa eligendi doloremque minus voluptatum! Doloribus repellendus necessitatibus perspiciatis, enim, quis minus, ad dolores beatae quo eos facilis laudantium et repudiandae earum aliquid minima illum molestiae nam id consequuntur repellat soluta! Impedit, laborum?
-                </p>
+                {% block content %}
+                    <p>base.html.jinja</p>
+                {% endblock content %}
             </div>
             <div class="col-4">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quidem pariatur possimus numquam asperiores veritatis quas voluptatibus, ducimus odit quod aspernatur non neque assumenda labore molestias est excepturi sint. Vero ipsa officia, a eos earum est iusto nisi voluptates dolor deleniti tenetur, perspiciatis placeat ad animi. Dolore possimus inventore minima nesciunt dignissimos sunt unde perferendis. Ratione exercitationem similique repudiandae modi iusto? Omnis natus accusamus repellendus hic labore aspernatur libero, nisi corporis quidem maxime nemo. Tempora nam odit quaerat recusandae earum vero, quisquam totam hic, distinctio beatae labore sed, architecto aspernatur ut. Natus facere, explicabo vel veritatis repellat nobis pariatur quam.
