@@ -8,8 +8,8 @@ from app.utils import get_item
 import requests
 import pandas as pd
 import numpy as np
-import matplotlib import pyplot as plt
-import app.utils import get_item
+from matplotlib import pyplot as plt
+from app.utils import get_item
 
 
 
@@ -58,10 +58,10 @@ class Product():
         opinions["stars"] = opinions["stars"].map(lambda x: float(x.split("/")[0].replace(",", ".")))
 
 
-        self.opinions_count: len(opinions),
-        self.pros_count: opinions["pros"].map(bool).sum(),
-        self.cons_count: opinions["cons"].map(bool).sum(),
-        self.average_score: opinions["stars"].mean().round(2),
+        self.opinions_count: len(opinions)
+        self.pros_count: opinions["pros"].map(bool).sum()
+        self.cons_count: opinions["cons"].map(bool).sum()
+        self.average_score: opinions["stars"].mean().round(2)
 
         return self
 
