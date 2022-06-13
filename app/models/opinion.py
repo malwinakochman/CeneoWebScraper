@@ -23,11 +23,24 @@ class Opinion():
         return self
     
     def __str__(self) -> str:
-        pass
+        return f"{self.author}, {self.recommendation}, {self.stars}, {self.content}, {self.useful}, {self.useless}, {self.published}, {self.purchased}, {self.pros}, {self.cons}, {self.opinion_id}"
+
 
     def __repr__(self) -> str:
-        pass
+        return f"{self.author}, {self.recommendation}, {self.stars}, {self.content}, {self.useful}, {self.useless}, {self.published}, {self.purchased}, {self.pros}, {self.cons}, {self.opinion_id}"
 
     def to_dict(self) -> dict:
-        pass
-    
+        opinion_data = {
+            "author": self.author,
+            "recommendation": self.recommendation,
+            "stars": self.stars, 
+            "content": self.content, 
+            "useful": self.useful, 
+            "useless": self.useless, 
+            "published": self.published,
+            "purchased": self.purchased, 
+            "pros": self.pros, 
+            "cons": self.cons, 
+        }
+
+        return opinion_data
