@@ -65,8 +65,8 @@ class Product():
 
     def draw_charts(self):
         opinions = self.opinions_to_df()
-        if not os.path.exists("app/static/plots"):
-                os.makedirs("app/static/plots")
+        if not os.path.exists("CeneoWebScraper/app/static/plots"):
+                os.makedirs("CeneoWebScraper/app/static/plots")
 
                 
         recommendation = opinions["recommendation"].value_counts(dropna=False).sort_index().reindex(["Nie polecam", "Polecam", None], fill_value=0)
@@ -78,7 +78,7 @@ class Product():
             )
 
         plt.title("Rekomendacje")
-        plt.savefig(f"app/static/plots/{self.product_id}_recommendations.png")
+        plt.savefig(f"CeneoWebScraper/app/static/plots/{self.product_id}_recommendations.png")
         plt.close()
 
         stars = opinions["stars"].value_counts().sort_index().reindex(list(np.arange(0,5.5,0.5)), fill_value = 0)
@@ -134,21 +134,21 @@ class Product():
         return [opinion.to_dict() for opinion in self.opinions]
 
     def export_opinions(self):
-        if not os.path.exists("app/opinions"):
-            os.makedirs("app/opinions")
-        with open(f"app/opinions/{self.product_id}.json", "w", encoding="UTF-8") as jf:
+        if not os.path.exists("CeneoWebScraper/app/opinions"):
+            os.makedirs("CeneoWebScraper/app/opinions")
+        with open(f"CeneoWebScraper/app/opinions/{self.product_id}.json", "w", encoding="UTF-8") as jf:
             json.dump(self.opinion_to_dict(), jf, indent=4, ensure_ascii=False)
         
     
     def export_product(self):
-        if not os.path.exists("app/opinions"):
-            os.makedirs("app/opinions")
-        with open(f"app/opinions/{self.product_id}.json", "w", encoding="UTF-8") as jf:
+        if not os.path.exists("CeneoWebScraper/app/opinions"):
+            os.makedirs("CeneoWebScraper/app/opinions")
+        with open(f"CeneoWebScraper/app/opinions/{self.product_id}.json", "w", encoding="UTF-8") as jf:
             json.dump(self.stats_to_dict(), jf, indent=4, ensure_ascii=False)
         
     def import_product(self):
-        if os.path.exists(f"app/products/{self.product_id}.json"):
-            with open(f"app/products/{self.product_id}.json", "r", encoding="UTF-8") as jf:
+        if os.path.exists(f"CeneoWebScraper/app/products/{self.product_id}.json"):
+            with open(f"CeneoWebScraper/app/products/{self.product_id}.json", "r", encoding="UTF-8") as jf:
                 product = json.load(jf)
                 self.product_id = product["product_id"]
                 self.product_name = product["product_name"]
@@ -157,7 +157,7 @@ class Product():
                 self.cons_count = product["cons_count"]
                 self.average_score = product["average_score"]
             
-            with open(f"app/opinions/{self.product_id}.json", "r", encoding="UTF-8") as jf:
+            with open(f"CeneoWebScraper/app/opinions/{self.product_id}.json", "r", encoding="UTF-8") as jf:
                 opinions = json.load(jf)
                 for opinion in opinions:
                     self.opinions.append(Opinion(**opinion))
